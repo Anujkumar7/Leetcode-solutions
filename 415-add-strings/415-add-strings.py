@@ -1,12 +1,29 @@
 class Solution:
     def addStrings(self, num1: str, num2: str) -> str:
+        i = len(num1)-1
+        j = len(num2)-1
         
-        def str2int(num):
-            numDict = {'0' : 0, '1' : 1, '2' : 2, '3' : 3, '4' : 4, '5' : 5,
-                  '6' : 6, '7' : 7, '8' : 8, '9' : 9}
-            output = 0
-            for d in num:
-                output = output * 10 + numDict[d]
-            return output
+        carry =0
         
-        return str(str2int(num1) + str2int(num2))
+        res = []
+        
+        while i>=0 or j>=0:
+            curr_i = int(num1[i]) if i>=0 else 0
+            curr_j = int(num2[j]) if j>=0 else 0
+            
+            curr_sum = carry+ curr_i + curr_j
+            res.append(str(curr_sum%10))
+            
+            carry = curr_sum//10
+            
+            i-=1
+            j-=1
+            
+        if carry:
+            res.append(str(carry))
+            
+        return "".join(reversed(res))
+        
+    #TC- O(N+M) N= num1 and M= num2 
+    #SC- O(N+M)
+                
