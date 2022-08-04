@@ -17,6 +17,8 @@ class Solution:
                 l2 = l2.next
             tail = tail.next
             
+#If one list is empty and another one is'nt
+#In case we have to find the non empty list and insert it at the end of the results
         if l1:
             tail.next = l1
         elif l2:
