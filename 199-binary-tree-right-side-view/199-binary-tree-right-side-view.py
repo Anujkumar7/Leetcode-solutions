@@ -6,12 +6,12 @@
 #         self.right = right
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        def collect(node, depth):
+        def helper(node, level):
             if node:
-                if depth == len(view):
-                    view.append(node.val)
-                collect(node.right, depth+1)
-                collect(node.left, depth+1)
-        view = []
-        collect(root, 0)
-        return view
+                if level == len(res):
+                    res.append(node.val)
+                helper(node.right, level+1)
+                helper(node.left, level+1)
+        res = []
+        helper(root, 0)
+        return res
