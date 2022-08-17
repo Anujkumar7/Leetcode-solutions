@@ -15,3 +15,4 @@ class Solution:
                 rightmax = max(rightmax,height[r])
                 res+= rightmax-height[r]
         return res
+    
