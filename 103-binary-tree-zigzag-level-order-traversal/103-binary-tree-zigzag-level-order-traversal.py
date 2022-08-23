@@ -24,8 +24,12 @@ class Solution:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
+                    
+    # If the flag is true then we append from right to left
             if even_level:
                 res.append(level[::-1])
+                
+    #Else left to right            
             else:
                 res.append(level)
             even_level = not even_level
