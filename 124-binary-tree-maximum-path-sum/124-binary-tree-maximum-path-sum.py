@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        
+ #Concept used : Height of bonary tree + Width of binary tree       
         res = [root.val]
         
    #Return the max path without split
