@@ -13,6 +13,6 @@ class Solution:
             elif root.val>= maxval or root.val<= minval:
                 return False
             
-            return valid_bst(root.left, minval, root.val) and valid_bst(root.right, root.val, maxval)
+            return valid_bst(root.left, minval, root.val) and                                        valid_bst(root.right, root.val, maxval)
         
         return valid_bst(root, -math.inf, math.inf)
