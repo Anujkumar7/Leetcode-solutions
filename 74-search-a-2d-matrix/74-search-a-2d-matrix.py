@@ -9,7 +9,8 @@ class Solution:
         while low <= high:
             mid = (low + high) // 2
             num = matrix[mid // cols] [mid % cols]
-
+            
+            #Implementing Binary search
             if num == target:
                 return True
             elif num < target:
