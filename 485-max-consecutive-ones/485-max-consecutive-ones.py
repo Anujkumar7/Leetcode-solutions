@@ -6,8 +6,7 @@ class Solution:
         for num in nums:
             if num== 1:
                 count+=1
-            else:
                 ans = max(ans, count)
+            else:
                 count = 0
-        ans = max(ans, count)
         return ans
