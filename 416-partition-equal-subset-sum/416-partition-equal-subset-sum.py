@@ -11,6 +11,7 @@ class Solution:
     
         for num in nums:
             for i in range(target, num-1, -1):
-                if dp[target]: return True
+                if dp[target]:
+                    return True
                 dp[i] = dp[i] or dp[i-num]
         return dp[target]
