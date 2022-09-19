@@ -3,10 +3,14 @@ class Solution:
         res = []
         nums.sort()
         
+     # i is for index and a is for values and enumerate is for keeping a counter
         for i, a in enumerate (nums):
+            
+     # if we found same ele twice, just continue       
             if i> 0 and a== nums[i-1]:
                 continue
-                
+            
+          #Two sum -II algo  
             l, r = i+ 1 , len(nums)- 1
             while l< r:
                 threesum = a + nums[l] + nums[r]
