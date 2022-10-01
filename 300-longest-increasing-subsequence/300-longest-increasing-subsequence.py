@@ -8,22 +8,16 @@ class Solution:
 #                     LIS[i] = max(LIS[i], 1+ LIS[j])
 #         return max(LIS)
     
+    #DP with Binary solution
         f = []
         for i in range(len(nums)):
+        #If the ele in nums is greater than the ele in f
+        #append that ele
             if not f or nums[i]> f[-1]:
                 f.append(nums[i])
-            
+        #If ele is less, then find that particular index of that ele    
             else:
                 index = bisect.bisect_left(f, nums[i])
                 f[index] = nums[i]
         return len(f)
-    
-        # f = []
-        # for i in range(len(nums)):
-        #     if not f or nums[i] > f[-1]:
-        #         f.append(nums[i])
-        #     else:
-        #         pos = bisect.bisect_left(f, nums[i])
-        #         f[pos] = nums[i]
-        # return len(f)
         
