@@ -6,7 +6,7 @@ class Solution:
     def spanningTree(self, V, adj):
         key = [sys.maxsize]*V
         parent = [-1]* (V)
-        visited = [False]*(V)
+        MST = [False]*(V)
         
         key[0] = 0
         parent[0]= -1
@@ -16,13 +16,13 @@ class Solution:
             mini = sys.maxsize
             minNode = 0
             for j in range(V):
-                if visited[j]== False and key[j]< mini:
+                if MST[j]== False and key[j]< mini:
                     minNode = j
                     mini = key[j]
-            visited[minNode] = True
+            MST[minNode] = True
             
             for node, dis in adj[minNode]:
-                if visited[node] == False and dis< key[node]:
+                if MST[node] == False and dis< key[node]:
                     parent[node] = minNode
                     key[node] = dis
         return sum(key)
