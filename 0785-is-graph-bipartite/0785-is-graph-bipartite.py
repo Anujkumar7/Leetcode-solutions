@@ -1,5 +1,7 @@
 class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
+        
+        #BFS
         colour = [None]* len(graph)
         for i in range (len(graph)):
             if colour[i] is None:
