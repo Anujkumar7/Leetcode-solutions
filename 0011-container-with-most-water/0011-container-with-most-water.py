@@ -15,6 +15,9 @@ class Solution:
         res = 0
         l,r = 0, len(height)-1
         while l< r:
+            #area of rectangle is height* breadth
+            #breadth  = (r-l) and the height is the bottleneck of the both heights meaning min of both heights min(height[l], height[r])
+            
             area = (r- l) * min(height[l], height[r])
             res = max(res, area)
             
