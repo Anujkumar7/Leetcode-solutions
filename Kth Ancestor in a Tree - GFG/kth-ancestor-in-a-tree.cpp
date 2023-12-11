@@ -119,6 +119,10 @@ Node* solve(Node *root, int&k, int node, int&ans){
     if(root->data == node){
         return root;
     }
+    if(ans != -1){
+        // OPTIMISATION: ans mil chuka hai , aage mat jaao
+        return root;
+    }
     auto l = solve(root->left, k, node, ans);
     auto r = solve(root->right, k, node, ans);
     
